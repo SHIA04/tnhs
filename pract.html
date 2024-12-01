@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Management Computing</title>
+    <link rel="stylesheet" type="text/css" href="slider.html">
+    <link rel="stylesheet" type="text/css" href="dashboardgallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            color: #333;
+            background-color: lightgray;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2D1E64;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 670px;
+            position: fixed;
+        }
+
+        .sidebar button {
+            margin-top: 0px;
+            width: 80px;
+            background-color: #D2D2F3;
+            border-radius: 5px;
+            border-color: #4B4B9A;
+            margin-left: 190px;
+        }
+
+        .sidebar img {
+            width: 75px;
+            height: 75px;
+            margin-left: -180px;
+            padding-right: 15px;
+        }
+
+        .sidebar h2 {
+            margin: -45px 40px 50px 70px;
+            font-size: 18px;
+        }
+
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #4B4B9A;
+        }
+        .con1 {
+            margin-left: 290px;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            padding: 20px;
+            height: 500px;
+        }
+
+        .content img {
+            margin-top: -20px;
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-bottom: 50px;
+            padding-right: 40px;
+            width: 90px;
+            height: 90px;
+            cursor: pointer;
+        }
+
+        /* for the dot line on the picture slider */
+        .content > div:nth-child(5) {
+            margin-top: -90px;
+            margin-right: 100px;
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .enrolh1 {
+            font-size: 25px;
+            color: #2D1E64;
+            margin-top: -170px;
+            margin-left: 140px;
+
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #D2D2F3;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #2D1E64;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid #2D1E64;
+            border-radius: 5px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 140px;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            color: #2D1E64;
+        }
+
+        .table th {
+            background-color: #D2D2F3;
+            color: #2D1E64;
+            font-weight: bold;
+        }
+        .lists {
+            color: #2D1E64;
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+        }
+        .lists a {
+            color: #2D1E64;
+        }
+        .listA h4 {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .listA nav a {
+            text-decoration: none;
+            display: block;
+            padding-top: 10px;
+            padding-right: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .listA nav a:hover {
+            background-color: dimgray;
+            height: 20px;
+            padding-left: 10px;
+        }
+        .listB h4 {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .listB nav a {
+            text-decoration: none;
+            display: block;
+            padding-top: 10px;
+            padding-right: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .listB nav a:hover {
+            background-color: dimgray;
+            height: 20px;
+            padding-left: 10px;
+        }
+        .listC h4 {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .listC nav a {
+            text-decoration: none;
+            display: block;
+            padding-top: 10px;
+            padding-right: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .listC nav a:hover {
+            background-color: dimgray;
+            height: 20px;
+            padding-left: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            margin-left: 230px;
+            color: #555;
+            margin-bottom: -10px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html"><button id="logout" onclick="logoutAlert()">Logout</button></a>
+        <img src="pfp.png" alt="Username">
+        <h2>Hi! Username</h2>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="student_status.html">Ongoing Student Status</a>
+            <a href="student_data.html">Student Data</a>
+            <a href="enrolled_students.html">Enrolled Students</a>
+            <a href="more_info.html">More Information</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </div>
+
+<div class="con1">
+     <div class="content">
+        <div class="header">
+            <a href="home.html"><img src="tnhslogo.png"></a>
+    </div>
+
+    <div class="enrolh1">
+            <h1>Settings</h1>
+    </div>
+
+<div class="lists">
+    <div class="listA">
+        <h4>Account Settings</h4>
+        <nav>
+            <a href="#">Change Profile Picture</a>
+            <a href="#">Edit Personal Information</a>
+            <a href="#">Change Password</a>
+        </nav>
+    </div>
+
+    <div class="listB">
+        <h4>Privacy Settings</h4>
+        <nav>
+            <a href="#">Manage Data</a>
+            <a href="#">Activity Log</a>
+            <a href="#">Two-Factor Authentication (2FA)</a>
+        </nav>
+    </div>
+
+    <div class="listC">
+        <h4>Support Feedback</h4>
+        <nav>
+            <a href="#">Help Center/FAQs</a>
+            <a href="#">Contact Support</a>
+            <a href="#">Feedback Form</a>
+        </nav>
+    </div>
+</div>
+
+
+        <div class="footer">
+            <p>&copy; Tagoloan National Highschool. All rights reserved | Privacy Policy</p>
+        </div>
+    </div>
+</div>
+<script>
+    function logoutAlert() {
+    alert("are you sure you want to logout?");
+  window.location.assign("index.html");
+}
+</script>
+</body>
+</html>

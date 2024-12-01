@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Management Computing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            color: #333;
+            background-color: lightgray;
+            position: fixed;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2D1E64;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 550px;
+            position: fixed;
+        }
+
+        .sidebar button {
+            margin-top: 0px;
+            width: 80px;
+            background-color: #D2D2F3;
+            border-radius: 5px;
+            border-color: #4B4B9A;
+            margin-left: 190px;
+        }
+
+        .sidebar img {
+            width: 75px;
+            height: 75px;
+            margin-left: -180px;
+            padding-right: 15px;
+        }
+
+        .sidebar h2 {
+            margin: -45px 40px 50px 70px;
+            font-size: 18px;
+        }
+
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #4B4B9A;
+        }
+        .con1 {
+            margin-left: 290px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: lightgray;
+        }
+
+        .content img {
+            margin-top: -20px;
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-bottom: 50px;
+            padding-right: 40px;
+            width: 90px;
+            height: 90px;
+            cursor: pointer;
+        }
+
+        /* for the dot line on the picture slider */
+        .content > div:nth-child(5) {
+            margin-top: -90px;
+            margin-right: 100px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .enrolh1 {
+            font-size: 25px;
+            color: #2D1E64;
+            margin-top: -190px;
+            margin-left: 140px;
+            margin-bottom: 100px;
+
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 50px;
+            color: #2D1E64;
+            margin-top: 20px;
+            margin-left: 300px;
+            letter-spacing: 4px;
+            margin-top: -20px;
+        }
+
+        .cards {
+            margin-left: 20px;
+            display: flex;
+            gap: 100px;
+            margin-bottom: ;
+        }
+
+        .card1 {
+            flex: 1;
+            background-color: #2D1E64;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            margin-left: 10px;
+        }
+        .card2 {
+            flex: 1;
+            background-color: #2D1E64;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 160px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html"><button id="logout" onclick="logoutAlert()">Logout</button></a>
+        <img src="pfp.png" alt="Username">
+        <h2>Hi! Username</h2>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="student_status.html">Ongoing Student Status</a>
+            <a href="student_data.html">Student Data</a>
+            <a href="enrolled_students.html">Enrolled Students</a>
+            <a href="more_info.html">More Information</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </div>
+
+
+ <div class="con1">
+    <div class="content">
+        <div class="header">
+            <a href="home.html"><img src="tnhslogo.png"></a>
+    </div>
+
+    <div class="enrolh1">
+            <h1>Student Data</h1>
+    </div>
+
+        
+        <div class="cards">
+            <div class="card1">Ongoing Applications<br>109</div>
+            <div class="card2">Students <br>Enrolled<br>1,057</div>
+        </div>
+
+   
+
+        <div class="footer">
+            <p>&copy; Tagoloan National Highschool. All rights reserved | Privacy Policy</p>
+        </div>
+    </div>
+
+<script>
+    function logoutAlert() {
+    alert("are you sure you want to logout?");
+  window.location.assign("index.html");
+}
+</script>
+</body>
+</html>

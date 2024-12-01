@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Applicants Status</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            color: #333;
+            background-color: lightgray;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2D1E64;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 600px;
+            position: fixed;
+
+        }
+
+        .sidebar button {
+            margin-top: 0px;
+            width: 80px;
+            background-color: #D2D2F3;
+            border-radius: 5px;
+            border-color: #4B4B9A;
+            margin-left: 190px;
+        }
+
+        .sidebar img {
+            width: 75px;
+            height: 75px;
+            margin-left: -180px;
+            padding-right: 15px;
+        }
+
+        .sidebar h2 {
+            margin: -45px 40px 50px 70px;
+            font-size: 18px;
+        }
+
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #4B4B9A;
+        }
+         .con1 {
+            margin-left: 290px;
+        }
+
+         .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content img {
+            margin-top: -20px;
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-bottom: 50px;
+            padding-right: 40px;
+            width: 90px;
+            height: 90px;
+        }
+
+        /* for the dot line on the picture slider */
+        .content > div:nth-child(5) {
+            margin-top: -90px;
+            margin-right: 100px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .enrolh1 {
+            font-size: 25px;
+            color: #2D1E64;
+            margin-top: -170px;
+            margin-left: 140px;
+            margin-bottom: 70px;
+
+        }
+
+        input {
+            margin-top: -50px;
+            width: 100px;
+            height: 10px;
+            font-size: 10px;
+            margin-left: 40px;
+            margin-bottom: 45px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: lightgray;
+        }
+
+        .content img {
+            margin-top: -20px;
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-bottom: 50px;
+            padding-right: 40px;
+            width: 90px;
+            height: 90px;
+            cursor: pointer;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .header h1 {
+            font-size: 50px;
+            color: #2D1E64;
+            margin-top: -220px;
+            margin-bottom: 60px;
+            margin-left: 220px;
+        }
+
+
+        .table {
+            margin-left: 50px;
+            width: 850px;
+            border-collapse: collapse;
+            background-color: lightgray;
+            margin-bottom: 125px;
+            margin-top: -20px;
+        }
+
+        .table th, .table td {
+            border: 1px solid dimgray;
+            padding: 10px;
+            text-align: left;
+            color: white;
+        }
+
+        .table th {
+            background-color: #2D1E64;
+            color: ivo;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            background-color: #2D1E64;;
+        }
+        .table td {
+            color: #2D1E64;
+        }
+
+         .search-container { /*styl for the search container*/
+            position: relative; /*positions search box relatively*/
+            width: 1200px; /*sets how wide the box is*/
+            border: none; /*sets the border to none, to remove unneccessary border that came with it*/
+            padding: 0px 5px 0px 0px; /*sets padding inside the container*/
+            margin: -25px 0px 0px -25px; /*sets margin fo positioning*/
+        }
+        .search-container i { /*stle for the search-container i link*/
+            position: absolute; /* positions icon inside the input absolutely */
+            width: 40px; /*sets how much the gap is between the icon and the box*/
+            left: 230px; /*sets the left positioning of the icon*/
+            top: -42%; /*sets the position relation to the top*/
+            font-size: 20px; /*tjis sets how big the icon is*/
+            color: #ccc; /*sets the font color to gray for the icon*/
+            border: none; /*sets the border to none*/
+            margin: 28px 0px 0px -150px; /*adds margin for icon pisitioning*/
+            padding: 0px 5px 1px 1px; /*padding inisde the icon*/
+            color: #2D1E64;
+        }
+        .search-container input { /*style for the search-container input*/
+            width: 50%; /*width of the search box*/
+            padding: 3px 10px 5px 55px; /*sets the padding inside the search input*/
+            font-size: 15px; /*sets the font for the input text*/
+            margin-left: 75px;
+            height: 15px;
+            border: 2px solid #2D1E64;
+            background-color: lightgray;
+        }
+        .footer {
+            text-align: center;
+            margin-left: -80px;
+            margin-bottom: -20px;
+            color: #555;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+
+     <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html"><button id="logout" onclick="logoutAlert()">Logout</button></a>
+        <img src="pfp.png" alt="Username">
+        <h2>Hi! Username</h2>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="student_status.html">Ongoing Student Status</a>
+            <a href="student_data.html">Student Data</a>
+            <a href="enrolled_students.html">Enrolled Students</a>
+            <a href="more_info.html">More Information</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </div>
+
+<div class="con1">
+    <div class="content">
+        <div class="header">
+            <a href="home.html"><img src="tnhslogo.png"></a>
+    </div>
+
+    <div class="enrolh1">
+            <h1>Enrolled Students</h1>
+    </div>
+
+        <div class="search-container">
+        <input type="text">
+        <i class="fa fa-search"></i>
+    </div>
+
+<table class="table">
+            <thead>
+                <tr class="tr1">
+                    <th>Name</th>
+                    <th>Year Level</th>
+                    <th>Status</th>
+                    <th>ID No.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Asia Shandara M. Valmorida</td>
+                    <td>Grade 8</td>
+                    <td>Enrolled</td>
+                    <td>2090129</td>
+                </tr>
+                <tr>
+                    <td>Park Jongseong</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>20103857</td>
+                </tr>
+                <tr>
+                    <td>Ana Rodriguez Santos</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>2719436</td>
+                </tr>
+                <tr>
+                    <td>Juan Hernandez Mendoza</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>25979023</td>
+                </tr>
+                <tr>
+                    <td>Gabriel Rodriguez Gonzalez</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>22591087</td>
+                </tr>
+                <tr>
+                    <td>Sofia Cruz</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>29330268</td>
+                </tr>
+                <tr>
+                    <td>Carlos Rivera</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>2195722</td>
+                </tr>
+                <tr>
+                    <td>Maria Gonzalez</td>
+                    <td>Grade 9</td>
+                    <td>Enrolled</td>
+                    <td>2100588</td>
+                </tr>
+                <tr>
+                    <td>Miguel De la Cruz</td>
+                    <td>Grade 9</td>
+                    <td>Enrolled</td>
+                    <td>2237190</td>
+                </tr>
+                <tr>
+                    <td>Miguel Carlo Ramos</td>
+                    <td>Grade 8</td>
+                    <td>Enrolled</td>
+                    <td>23030385</td>
+                </tr>
+                <tr>
+                    <td>Andrea Castro Rivera</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>2228105</td>
+                </tr>
+                <tr>
+                    <td>Maria Morales Santos</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>2347194</td>
+                </tr>
+                <tr>
+                    <td>Dela Vega Santos</td>
+                    <td>Grade 10</td>
+                    <td>Enrolled</td>
+                    <td>2006401</td>
+                </tr>
+                <tr>
+                    <td>Maria Lopez Rivera</td>
+                    <td>Grade 9</td>
+                    <td>Enrolled</td>
+                    <td>2929103</td>
+                </tr>
+                <tr>
+                    <td>Carlos Garcia</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>2111964</td>
+                </tr>
+                <tr>
+                    <td>Clarissa Dela Vega Mendoza</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>26803508</td>
+                </tr>
+                <tr>
+                    <td>Victoria Morales Ramos</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>24399799</td>
+                </tr>
+                <tr>
+                    <td>Margarita Garcia Flores</td>
+                    <td>Grade 9</td>
+                    <td>Enrolled</td>
+                    <td>25040407</td>
+                </tr>
+                <tr>
+                    <td>Diego Fernandez Torres</td>
+                    <td>Grade 7</td>
+                    <td>Enrolled</td>
+                    <td>27265164</td>
+                </tr>
+                <tr>
+                    <td>Leonardo Castro Villanueva</td>
+                    <td>Grade 8</td>
+                    <td>Enrolled</td>
+                    <td>28618989</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>&copy; Tagoloan National Highschool. All rights reserved | Privacy Policy</p>
+        </div>
+    </div>
+
+
+<script>
+    function logoutAlert() {
+    alert("are you sure you want to logout?");
+  window.location.assign("index.html");
+}
+</script>
+</body>
+</html>

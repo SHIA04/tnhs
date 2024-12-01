@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Management Computing</title>
+    <link rel="stylesheet" type="text/css" href="slider.html">
+    <link rel="stylesheet" type="text/css" href="dashboardgallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            color: #333;
+            background-color: lightgray;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2D1E64;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 650px;
+            cursor: pointer;
+            position: fixed;
+            
+        }
+
+        .sidebar button {
+            margin-top: 0px;
+            width: 80px;
+            background-color: #D2D2F3;
+            border-radius: 5px;
+            border-color: #4B4B9A;
+            margin-left: 190px;
+        }
+
+        .sidebar img {
+            width: 75px;
+            height: 75px;
+            margin-left: -180px;
+            padding-right: 15px;
+        }
+
+        .sidebar h2 {
+            margin: -45px 40px 50px 70px;
+            font-size: 18px;
+        }
+
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #4B4B9A;
+        }
+        .con1 {
+            margin-left: 290px;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content img {
+            margin-top: -20px;
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-bottom: 50px;
+            padding-right: 40px;
+            width: 90px;
+            height: 90px;
+            cursor: pointer;
+        }
+
+        /* for the dot line on the picture slider */
+        .content > div:nth-child(5) {
+            margin-top: 50px;
+            margin-right: 100px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .enrolh1 {
+            font-size: 25px;
+            color: #2D1E64;
+            margin-top: -170px;
+            margin-left: 140px;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #D2D2F3;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #2D1E64;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid #2D1E64;
+            border-radius: 5px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 140px;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            color: #2D1E64;
+        }
+
+        .table th {
+            background-color: #D2D2F3;
+            color: #2D1E64;
+            font-weight: bold;
+        }
+
+        .pcontent {
+            color: #2D1E64;
+            margin-left: 30px;
+            margin-right: 150px;
+        }
+
+        .pcontent h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: -10px;
+        }
+        .pcontent p {
+            text-indent: 50px;
+            text-align: justify;
+        }
+        .history {
+            margin-left: 30px;
+            margin-right: 40px;
+            text-align: center;
+            margin-top: 60px;
+            color: #2D1E64;
+        }
+
+        .history h2 {
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .history p {
+            text-indent: 50px;
+            text-align: justify;
+        }
+        hr {
+            margin-top: 40px;
+            color: #2D1E64;
+        }
+        .desc {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 325px;
+            color: #2D1E64;
+            margin-left: 180px;
+            margin-top: -30px;
+            margin-bottom: -30px;
+            font-size: 25px;
+        }
+        .links {
+            margin-bottom: -480px;
+        }
+        
+        .youtube {
+            border: 5px solid #2D1E64;
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            margin-left: 50px;
+        }
+        .map {
+            border: 5px solid #2D1E64;
+            width: 400px;
+            height: 300px;
+            margin-left: 500px;
+            margin-top: -310px;
+        }
+
+         .icons {
+            margin-top: 550px;
+            margin-left: 450px;
+        }
+
+        .fa-facebook {
+          color: #2D1E64;
+        }
+
+        .fa-twitter {
+          color: #2D1E64;
+        }
+
+        .fa-google {
+          color: #2D1E64;
+        }
+        .fa-youtube {
+            color: #2D1E64;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 0px;
+            color: #555;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html"><button id="logout" onclick="logoutAlert()">Logout</button></a>
+        <img src="pfp.png" alt="Username">
+        <h2>Hi! Username</h2>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="student_status.html">Ongoing Student Status</a>
+            <a href="student_data.html">Student Data</a>
+            <a href="enrolled_students.html">Enrolled Students</a>
+            <a href="more_info.html">More Information</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </div>
+
+<div class="con1">
+    <div class="content">
+        <div class="header">
+            <a href="home.html"><img src="tnhslogo.png"></a>
+    </div>
+
+    <div class="enrolh1">
+            <h1>More Information</h1>
+    </div>
+
+    
+    <div class="pcontent">
+        <h2>Introduction</h2>
+        <p>Welcome to our school, TAGOLOAN NATIONAL HIGH SCHOOL, where educational, social and moral  development go hand in hand for global competitiveness. TNHS educational endeavors focus on academics and the whole child growth for sports, arts and technology excellence.</p>
+
+        <h2>School</h2>
+        <p>Our beautiful campus includes a library, 2 computer labs, and several offices to cater the needs of our students. we offer special curriculum for sports, special curriculum for the arts, technical and vocational curriculum, science  curriculum, open high school program and the regular curriculum for secondary education.</p>
+
+        <h2>Latest News</h2>
+        <ul>
+            <li>TNHS new 4 classroom, 2 storey building for Techvoc</li>
+            <li>ICTSI donated 16 new PCs to TNHS</li>
+        </ul>
+
+        <h2>School Profile</h2>
+        <p>Sprawled in a trapezoidal area of uneven terrain in a  1.5 hec. school site, Tagoloan National High School can be reached from the national highway in 4 to 5 minutes by the most accessible local transport, the trisikad following Casiño street. Serving a population of over 3,500 students, TNHS is composed of 52 classroom, a library, a 2-storey IT building that houses 2 computer lab, secretary/record keepers’ office, school clinic, guidance office, supply office, techvoc shopwork for electricity and food trades, special program for sports office, special program for the arts office and the office of the principal with a teaching force of 75 qualified instructors and 2 competent non – teaching personnel.</p>
+
+        <h2>Vision</h2>
+        <p>TAGOLOAN NATIONAL HIGH SCHOOL envision to produce graduates who are equipped of the necessary academic skills and moral consciousness to prepare them to be spiritually enlightened productive citizens who are globally qualified and competitive.</p>
+
+        <h2>Mission</h2>
+        <p>It is the mission of TAGOLOAN NATIONAL HIGH SCHOOL to uphold the learning standard of secondary education through enhanced leadership and upgraded instructional skills that aim at producing morally conscious, academically excellent graduates ready to tackle higher learning and at the same time answer their need to uplift their economic status in life.</p>
+    </div>
+
+    <div class="history">
+        <h2>Brief History of TNHS</h2>
+        <p>Tagoloan National High School started as a night high school with two classrooms:  one section for the 1st yr. and one for the second year with 3 classroom teachers.  Sharing its school site with Tagoloan Central School, the newly opened secondary school was then named Tagoloan Night High School. </p>
+
+        <p>1972-73 saw Tagoloan Night High School evolving into a 4-classroom school and at the end of the school year, the 1st batch of graduates was produced.  As the population increased, and the lack of classroom becoming a pressing problem, the school saw the necessity of offering a 2-session school program.  Hence, the Day and the Night session were created.</p>
+
+        <p>It was not until 1994 through the effort of Mayor Paulino Y. Emano that TNHS was finally transferred to its permanent school site provided by the Local government. With a school site of its own, temporary classrooms were constructed through the initiative of Mayor Paulino (Oloy) Yap Emano.  It was during this year that the night session was completely phased out and the name changed to Tagoloan National High School. </p>
+
+        <p>As the student population increased steadily, it became necessary for TNHS to expand—more classrooms were constructed and more teachers were hired to answer the increasing need of the students.</p>
+
+        <p>At present, TNHS ranks the 2nd biggest public secondary school in the division of Misamis Oriental with 52 classrooms serving 3,577 students.  It has 80 faculty and staff, 75 are teachers 6 of whom are master teachers, a school nurse, 1 administrative assistant 3, 1 administrative assistant 2 (deployed), 3 head teachers and a principal I position occupied by Mrs. Severa S. Go</p>
+
+
+    </div><hr>
+
+    <div class="desc">
+        <h5 class="d1">Youtube Link:</h5>
+        <h5 class="d2">Location:</h5>
+    </div>
+
+    
+<div class="links">
+    <div class="youtube">
+        <iframe width="400" height="300" src="https://www.youtube.com/embed/dwVJ4qJ7458" allowfullscreen></iframe>
+    </div>
+
+   <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15782.321340823359!2d124.7483546!3d8.5400583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ffee99175baa61%3A0xd57a55b6215b65d7!2sTagoloan%20National%20High%20School!5e0!3m2!1sen!2sph!4v1732881884678!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Location</iframe></div>
+</div>
+
+    
+
+<div class="icons">
+<a href="https://www.facebook.com/TNHS304102" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-youtube"></a>
+</div>
+
+    
+        <div class="footer">
+            <p>&copy; Tagoloan National Highschool. All rights reserved | Privacy Policy</p>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+<script>
+function logoutAlert() {
+    alert("are you sure you want to logout?");
+  window.location.assign("index.html");
+}
+</script>
+
+</body>
+</html>
